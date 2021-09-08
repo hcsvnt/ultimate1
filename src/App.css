@@ -1,38 +1,48 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=ZCOOL+KuaiLe&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --main-bg: #000000;
+  --light-bg: #2D2D2D;
+  --acc-orange: #FF9900;
+  --acc-red: #FF3D00;
+
+  --font-grey: #808080;
+  --font-light-grey: #454545;
+
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* 
+  roboto
+  300 400 500 700
+  
+  24
+  36
+  64
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+  ZCOOL KuaiLe
+  Weight 
+  400
+  64
+
+  font-family: 'Roboto', sans-serif;
+  font-family: 'ZCOOL KuaiLe', cursive;
+*/
+
+
+body {
+  /* font-size: 24px; this on desktop */
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  /* background-color: var(--main-bg); */
 }

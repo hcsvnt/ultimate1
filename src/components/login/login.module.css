@@ -1,0 +1,9 @@
+.container {
+    background-color: var(--font-grey);
+    color: var(--acc-orange);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}

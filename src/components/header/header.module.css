@@ -1,0 +1,12 @@
+.header {
+    font-family: 'ZCOOL KuaiLe', cursive;
+    color: var(--acc-orange);
+}
+
+.header h1 {
+    /* font-size: 64px; this on desktop */
+    font-size: 32px;
+    /* margin: 40px; on desktop */
+    margin: 20px;
+
+}
