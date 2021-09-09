@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2rem 1fr; */
+
+    width: 100%;
+    background-color: var(--light-bg);
+
+    padding: 1rem;
+}
+
+.name, .date {
+    /* grid-row: 1; */
+    
+}
+
+.name {
+    
+}
+
+.date {
+    /* grid-column: span 2; */
+    /* text-align: right; */
+    font-style: italic;
+    
+}
+
+.stats {
+    /* grid-row: 2;
+    grid-column: span 3; */
+    display: flex;
+    justify-content: space-between;
+
+}
