@@ -2,7 +2,8 @@ import './App.css';
 import Layout from './components/layout/layout';
 import Login from './components/login/Login';
 import Register from './components/Register/Register';
-import TodoList from './components/lists-display/ListsDisplay';
+import ListsDisplay from './components/lists-display/ListsDisplay';
+import TodoList from './components/todo-list/TodoList';
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Layout>
         {/* <Login /> */}
         {/* <Register /> */}
-        <TodoList/>
+        {/* <ListsDisplay/> */}
+        <TodoList />
       </Layout>
     </div>
   );

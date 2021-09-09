@@ -1,7 +1,7 @@
 import React from 'react';
 import loginStyles from '../login/login.module.css';
 import styles from './register.module.css';
-import LoginInput from '../login-input/LoginInput';
+import TextInput from '../text-input/TextInput';
 import Button from '../button/Button';
 
 export default function Login() {
@@ -11,11 +11,11 @@ export default function Login() {
             <h2 className={styles.title}>
                 Create a new account
             </h2>
-            <LoginInput placeholder="Username"/>
-            <LoginInput placeholder="Email"/>
-            <LoginInput placeholder="Password"/>
-            <LoginInput placeholder="Repeat password"/>
-            <Button name="Create"/>
+            <TextInput placeholder="Username"/>
+            <TextInput placeholder="Email"/>
+            <TextInput placeholder="Password"/>
+            <TextInput placeholder="Repeat password"/>
+            <Button name="Create" className="button--big"/>
         </div>
     )
 }

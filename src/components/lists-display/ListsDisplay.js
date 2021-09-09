@@ -1,16 +1,17 @@
 import React from 'react';
 import styles from './lists-display.module.css';
 import Todo from '../lists-display-item/ListsDisplayItem';
-import LoginInput from '../login-input/LoginInput';
+import TextInput from '../text-input/TextInput';
 
 
 
-export default function TodoList() {
+export default function ListsDisplay() {
     return (
         <div className={styles.container}>
             <div className={styles.searchBar}>
 
-            <LoginInput placeholder="Search"/>
+            <TextInput placeholder="Search"/>
+            {/* should the below be a component? */}
                 <select>
                     <option>
                         Sort by

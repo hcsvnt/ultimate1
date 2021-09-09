@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './login.module.css';
-import LoginInput from '../login-input/LoginInput';
+import TextInput from '../text-input/TextInput';
 import Button from '../button/Button';
 
 export default function Login() {
@@ -9,9 +9,9 @@ export default function Login() {
             <h2 className={styles.title}>
                 Login
             </h2>
-            <LoginInput placeholder="Email or Username"/>
-            <LoginInput placeholder="Password"/>
-            <Button name="Login"/>
+            <TextInput placeholder="Email or Username"/>
+            <TextInput placeholder="Password"/>
+            <Button name="Login" className="button--big"/>
             <p>
                 or
             </p>

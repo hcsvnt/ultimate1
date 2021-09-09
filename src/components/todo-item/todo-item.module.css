@@ -1,0 +1,31 @@
+.container {
+    /* background-color: lawngreen; */
+    display: flex;
+    align-items: baseline;
+}
+
+.container input {
+    background-color: var(--light-bg);
+}
+
+.container input[type="checkbox"] {
+    margin-right: 0.5rem;
+    
+}
+
+.container input[type="text"] {
+    color: white;
+    font-size: inherit;
+    width: 100%;
+    padding: 0.25em 0 0.25em 0.75rem;
+    margin-bottom: 1em;
+    border: none;
+    border-bottom: 1px solid var(--acc-orange);
+
+}
+
+/* OUTLINES */
+
+.container input[type="text"]::placeholder {
+    color: var(--font-grey);
+}
