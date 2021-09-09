@@ -1,0 +1,10 @@
+.title {
+    margin-bottom: 2rem;
+}
+
+.arrow {
+    color: white;
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+}

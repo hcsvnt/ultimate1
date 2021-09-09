@@ -1,0 +1,21 @@
+
+.input {
+    width: 100%;
+    font-size: 16px;
+
+    padding: 0.5em;
+    border-radius: 6px;
+    
+}
+
+.input + .input {
+    margin-top: 1rem;
+}
+
+.input + button {
+    margin-top: 2rem;
+}
+
+.input::placeholder {
+    color: var(--font-grey);
+}
