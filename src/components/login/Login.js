@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './login.module.css';
+import Button from '../button/Button';
 
 export default function Login() {
     return (
@@ -9,9 +10,7 @@ export default function Login() {
             </h2>
             <input type="text" placeholder="Email or Username"/>
             <input type="text" placeholder="Password"/>
-            <button>
-                Login
-            </button>
+            <Button name="Login"/>
             <p>
                 or
             </p>

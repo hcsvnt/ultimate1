@@ -6,8 +6,9 @@ export default function Layout({children}) {
     return (
         <div className={styles.container}>
             <Header />
-            <h1>layout</h1>
-            {children}
+            <div className={styles.flex}>
+                {children} 
+            </div>
         </div>
     )
 }

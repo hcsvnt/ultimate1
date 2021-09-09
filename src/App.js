@@ -6,11 +6,7 @@ function App() {
   return (
     <div>
       <Layout>
-        <p>
-          hejka tu mati
-        </p>
         <Login />
-        
       </Layout>
     </div>
   );

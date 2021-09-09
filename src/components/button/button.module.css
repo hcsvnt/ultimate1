@@ -1,0 +1,15 @@
+.button {
+    font-size: 1.5rem;
+    color: white;
+    background-color: var(--acc-orange);
+    /* padding: 1rem 2rem; */
+    width: 8em;
+    height: 2.5em;
+
+    /* border-radius: 8px; desktop */
+    border-radius: 6px;
+    border: none;
+    outline: none;
+
+
+}
