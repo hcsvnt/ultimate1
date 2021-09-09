@@ -9,9 +9,9 @@ function App() {
   return (
     <div>
       <Layout>
-        {/* <Login /> */}
-        {/* <Register /> */}
-        {/* <ListsDisplay/> */}
+        <Login />
+        <Register />
+        <ListsDisplay/>
         <TodoList />
       </Layout>
     </div>

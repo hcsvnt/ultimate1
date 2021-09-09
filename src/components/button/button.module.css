@@ -1,5 +1,7 @@
 .button {
     /* font-size: 1.5rem; */
+    font-size: 1rem;
+    font-family: inherit;
     color: white;
     background-color: var(--acc-orange);
     /* padding: 1rem 2rem; */
@@ -18,7 +20,6 @@
 .button:hover {
     transform: scale(102%);
     filter: saturate(125%);
-    filter: ;
     transition: transform 300ms;
 }
 

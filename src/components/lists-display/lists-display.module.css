@@ -5,8 +5,16 @@
 
     padding: 1rem; 
     /* maybe no padding on 320px??? */
+    width: 100%;
+    max-width: 1200px;
 
 }
+
+/* @media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+    }
+} */
 
 .searchBar {
     display: flex;

@@ -3,10 +3,14 @@
     color: var(--acc-orange);
 }
 
-.header h1 {
-    /* font-size: 64px; this on desktop */
-    font-size: 32px;
-    /* margin: 40px; on desktop */
-    margin: 20px;
 
+.title {
+    font-size: 3rem;
+    margin: 20px 0;
 }
+
+/* @media (min-width: 1024px) {
+    .title {
+        font-size: 4rem;
+    }
+} */

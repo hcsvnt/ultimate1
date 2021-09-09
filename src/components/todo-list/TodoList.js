@@ -13,7 +13,19 @@ export default function TodoList() {
             <div>
                 <TodoItem/>
                 <TodoItem/>
+                {/* <TodoItem/>
                 <TodoItem/>
+                <TodoItem/>
+                <TodoItem/>
+                <TodoItem/>
+                <TodoItem/>
+                <TodoItem/>
+                <TodoItem/>
+                <TodoItem/>
+                <TodoItem/> */}
+                <p>
+                    why why why why why why why why why why why why why why why why why why why why why why why why why why why why why why why why why why why 
+                </p>
             </div>
             <div className={styles.todoButtons}>
                 <Button name="CANCEL" className="button--red"/>
@@ -23,7 +35,6 @@ export default function TodoList() {
                 <a>CANCEL</a>
                 <Button name="SAVE" className="button--big"/>
             </div>
-            
         </div>
     )
 }
