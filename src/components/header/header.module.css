@@ -3,14 +3,14 @@
     color: var(--acc-orange);
 }
 
-
 .title {
-    font-size: 3rem;
+    font-size: 2rem;
+    font-weight: 400;
     margin: 20px 0;
 }
 
-/* @media (min-width: 1024px) {
+@media (min-width: 1024px) {
     .title {
-        font-size: 4rem;
+        font-size: 2.7rem;
     }
-} */
+}

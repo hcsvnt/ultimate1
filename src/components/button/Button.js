@@ -3,7 +3,6 @@ import styles from './button.module.css';
 
 export default function Button({name, className}) {
     return (
-        // <button className={`${styles.button} ${className}`}>
         <button className={`${styles.button} ${styles[className]}`}>
             {name}
         </button>

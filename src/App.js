@@ -1,4 +1,5 @@
 import './App.css';
+// import styles from './global.module.css';
 import Layout from './components/layout/layout';
 import Login from './components/login/Login';
 import Register from './components/Register/Register';

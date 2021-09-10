@@ -3,18 +3,19 @@
     flex-direction: column;
     gap: 1rem;
 
-    padding: 1rem; 
+    /* padding: 1rem;  */
     /* maybe no padding on 320px??? */
     width: 100%;
-    max-width: 1200px;
+    /* max-width: 1200px; */
 
 }
 
-/* @media (min-width: 1024px) {
+@media (min-width: 1024px) {
     .container {
         max-width: 1200px;
+        max-width: 1162px;
     }
-} */
+}
 
 .searchBar {
     display: flex;
@@ -29,8 +30,10 @@
     outline: none;
 }
 
-.searchBar input {
+.searchBar input, .searchBar select {
     /* color: var(--font-grey); */
+    font-size: inherit;
+    font-weight: inherit;
 }
 
 .searchBar input::placeholder {
@@ -38,7 +41,7 @@
 }
 
 .searchBar select {
-    width: 8em;
+    width: 6em;
     text-align: center;
     /* color: var(--font-grey) */
 }

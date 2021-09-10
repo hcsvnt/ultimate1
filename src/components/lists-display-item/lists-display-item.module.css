@@ -12,15 +12,17 @@
     background-color: var(--light-bg);
 
     padding: 1rem;
+
+    font-family: inherit;
 }
 
 .name, .date {
     /* grid-row: 1; */
-    
+    font-weight: 400;
 }
 
 .name {
-    
+    font-weight: 700;
 }
 
 .date {

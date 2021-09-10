@@ -5,6 +5,9 @@
 
 .container input {
     background-color: var(--light-bg);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 400;
 }
 
 .container input[type="checkbox"] {

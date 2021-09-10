@@ -23,9 +23,6 @@ export default function TodoList() {
                 <TodoItem/>
                 <TodoItem/>
                 <TodoItem/> */}
-                <p>
-                    why why why why why why why why why why why why why why why why why why why why why why why why why why why why why why why why why why why 
-                </p>
             </div>
             <div className={styles.todoButtons}>
                 <Button name="CANCEL" className="button--red"/>
