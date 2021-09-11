@@ -47,7 +47,7 @@
 }
 
 .plus {
-    position: absolute;
+    position: fixed;
     top: 88vh;
     right: 1rem;
 
@@ -60,7 +60,7 @@
     line-height: 3rem;
     padding: 0.5rem;
 
-    /* sticky!!!! */
+    /* sticky!!!! ???*/
     
 }
 

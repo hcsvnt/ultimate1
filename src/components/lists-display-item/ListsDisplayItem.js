@@ -2,9 +2,17 @@ import React from 'react';
 import styles from './lists-display-item.module.css';
 
 
-export default function Todo({name, createdAt, stats}) {
+export default function ListsDisplayItem({name, task, createdAt, stats}) {
+
+        function displayThisList() {
+            console.log(task)
+        }
+
     return (
-        <div className={styles.container}>
+        <div 
+            className={styles.container}
+            onClick={displayThisList}
+            >
             <h4 className={styles.name}>
                 {name}
             </h4>
