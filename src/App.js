@@ -147,8 +147,9 @@ useEffect(() => {
   // registerUser(testUser);
   // login(testUser);
   // getTodoLists(testUser)
+  console.log(todoLists);
 
-},[])
+},[todoLists])
 
   return (
     <div>

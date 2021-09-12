@@ -1,14 +1,16 @@
 import React, {useState, useEffect, useContext} from 'react';
 import { Redirect } from 'react-router-dom';
 import {
-    // BrowserRouter as Router,
-    // Switch,
-    // Route,
+    BrowserRouter as Router,
+    Switch,
+    Route,
     Link
   } from 'react-router-dom';
 import styles from './lists-display.module.css';
 import ListsDisplayItem from '../lists-display-item/ListsDisplayItem';
 import TextInput from '../text-input/TextInput';
+
+import TodoList from '../todo-list/TodoList';
 
 import TodoListsContext from '../../hooks/TodoListsContext';
 
@@ -16,45 +18,6 @@ import TodoListsContext from '../../hooks/TodoListsContext';
 export default function ListsDisplay() {
 
     let { todoLists, setTodoLists } = useContext(TodoListsContext);
-    // let [test, setTest] = useState('mamma mia')
-    // let [todoLists, setTodoLists] = useState(
-    //     [    {
-    //             name: "Fridge",
-    //             task: [
-    //                 {
-    //                     name: "Buy butter, but not the meh one",
-    //                     isDone: false
-    //                 },
-    //                 {
-    //                     name: "Eat the watermelon before it rots",
-    //                     isDone: false
-    //                 },
-    //                 {
-    //                     name: "Remember about the salmon",
-    //                     isDone: false
-    //                 },
-    //             ]
-    //         },
-    //         {
-    //             name: "Work",
-    //             task: [
-    //                 {
-    //                     name: "Decide whether to useContext",
-    //                     isDone: false
-    //                 },
-    //                 {
-    //                     name: "Remember to add all the necessary icons to your app",
-    //                     isDone: false
-    //                 },
-    //                 {
-    //                     name: "Add mobile styling nobody asked for",
-    //                     isDone: true
-    //                 },
-    //             ]
-    //         }
-    //     ]
-    // )
-
 
         // add params - "takes list"
     function addList() {
@@ -65,6 +28,7 @@ export default function ListsDisplay() {
         let newTodoLists = [...todoLists, newTodoList];
         setTodoLists(newTodoLists);
         // <Redirect to="/alist" />
+        
     }
 
     return (
@@ -87,18 +51,43 @@ export default function ListsDisplay() {
                     </option>
                 </select>
             </div>
-           
+ 
             {todoLists.map((list, index) => {
                 let {name, task} = list
                 return (
-                    <ListsDisplayItem
-                    key={index}
-                    name={name} 
-                    task={task} 
-                    createdAt="11-11-1911"
-                    stats="Completed: 0 Uncompleted: 0 All: 0"/>
+                    <Link to={`/alist/${index}`}>
+
+                        <ListsDisplayItem
+                            key={index}
+                            name={name} 
+                            task={task} 
+                            createdAt="11-11-1911"
+                            stats="Completed: 0 Uncompleted: 0 All: 0"
+                            // onClick={() => console.log('aaa')}
+                            />
+                    </Link>
                 )
-            })}
+            })};
+
+            {/* look scrimba useparams  -> i need to move this switch to app.js afaik
+            basically my links are good, now i need to render TODOLIST from inside the switch in app.js
+            and get the list id from useParams, then just get the appropriate list from context. simple eh!
+            */}
+
+            <Switch>
+                <Route path="/alist/1">
+                    {/* <TodoList listName={todoLists[1].name} tasksArray={todoLists[1].task}/> */}
+                    <TodoList listName="a name here" tasksArray={[1, 2]}/>
+                </Route>
+                {/* {todoLists.map((list, index) => {
+                    let {name, task} = list
+                    return(
+                        <Route path={`/alist/${index}`}>
+                            <TodoList name={name} task={task}/>
+                        </Route>
+                    )
+                })} */}
+            </Switch>
   
 
             {/* <ListsDisplayItem name="Szkoła" createdAt="11-05-1999" stats="Completed: 3 Uncompleted: 20 All: 23" />

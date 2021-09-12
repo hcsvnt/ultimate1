@@ -9,6 +9,7 @@ export default function TodoItem({itemName, itemIsDone}) {
         setName(event.target.value)
         console.log(name)
     }
+    // how to make this more reusable
     
     function handleIsDone() {
         setIsDone(!isDone)

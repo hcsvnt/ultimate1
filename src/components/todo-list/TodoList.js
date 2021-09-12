@@ -7,40 +7,46 @@ import TodoItem from '../todo-item/TodoItem';
 
 import TodoListsContext from '../../hooks/TodoListsContext';
 
-export default function TodoList() {
-
-    let { todoLists } = useContext(TodoListsContext)
-    
-    let [name, setName] = useState('');
+export default function TodoList({listName, tasksArray}) {    
+    let [name, setName] = useState(listName);
     // let [task, setTask] = useState([]);
-    let [task, setTask] = useState(
-            [
-                {
-                    name: "Mop the kitchen",
-                    isDone: false
-                },
-                {
-                    name: "Hoover the hoose",
-                    isDone: true
-                },
+    let [task, setTask] = useState(tasksArray)
+    // let [task, setTask] = useState(
+    //         [
+    //             {
+    //                 name: "Mop the kitchen",
+    //                 isDone: false
+    //             },
+    //             {
+    //                 name: "Hoover the hoose",
+    //                 isDone: true
+    //             },
 
-            ]
-        );
-        console.log(todoLists)
-        console.log('oh my my')
+    //         ]
+    //     );
+
+    console.log(listName);
+
+        function handleName(event) {
+            setName(event.target.value)
+            console.log(event.target.value)
+        }
 
     return (
         <div className={styles.container}>
             <div className={styles.title}>
-                <TextInput value={name} placeholder="List name"/>
+                <TextInput 
+                    value={name}
+                    onChange={handleName}
+                    placeholder="List name"/>
             </div>
             <div>
-                {task.map((item, index) => {
+                {/* {task.map((item, index) => {
                     let {name, isDone} = item
                     return (
                         <TodoItem itemName={name} itemIsDone={isDone} key={index} />
                     )
-                    })}
+                    })} */}
                 <TodoItem/>
                 {/* 
                 
@@ -49,7 +55,10 @@ export default function TodoList() {
             </div>
             <div className={styles.todoButtons}>
                 <Button name="CANCEL" className="button--red"/>
-                <Button name="ADD" />
+                <Button 
+                    name="ADD"
+                    onClick={handleName} 
+                    />
             </div>
             <div>
                 {/* CONTEXT TESTS */}

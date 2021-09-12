@@ -5,6 +5,7 @@ import TextInput from '../text-input/TextInput';
 import Button from '../button/Button';
 
 export default function Login() {
+
     return (
         <div className={styles.container}>
             <span className={styles.arrow}>
@@ -19,7 +20,11 @@ export default function Login() {
             <TextInput placeholder="Email"/>
             <TextInput placeholder="Password"/>
             <TextInput placeholder="Repeat password"/>
-            <Button name="Create" className="button--big"/>
+            <Button 
+                name="Create" 
+                className="button--big"
+                // onClick={handleName}
+                />
         </div>
     )
 }
