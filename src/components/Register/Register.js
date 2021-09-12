@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import styles from './register.module.css';
 import TextInput from '../text-input/TextInput';
 import Button from '../button/Button';
@@ -6,7 +7,11 @@ import Button from '../button/Button';
 export default function Login() {
     return (
         <div className={styles.container}>
-            <span className={styles.arrow}>left</span>
+            <span className={styles.arrow}>
+                <Link exact to="/">
+                    left
+                </Link>
+            </span>
             <h2 className={styles.title}>
                 Create a new account
             </h2>
