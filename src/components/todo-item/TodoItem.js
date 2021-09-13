@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+
 import styles from './todo-item.module.css';
 
 export default function TodoItem({itemName, itemIsDone}) {

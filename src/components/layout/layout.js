@@ -1,6 +1,8 @@
 import React from 'react';
-import Header from '../header/Header';
+
 import styles from './layout.module.css';
+
+import Header from '../header/Header';
 
 export default function Layout({children}) {
     return (

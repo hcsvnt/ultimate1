@@ -1,6 +1,12 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+
 import './App.css';
-// import styles from './global.module.css';
+
 import Layout from './components/layout/layout';
 import Login from './components/login/Login';
 import Register from './components/Register/Register';
@@ -11,31 +17,10 @@ import TodoListsContext from './hooks/TodoListsContext';
 
 // MAKE FETCH A CUSTOM HOOK MAAAN!
 
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from 'react-router-dom';
-
-// function App() {
-//   return (
-//     <div>
-//       <Layout>
-//         <Login />
-//         <Register />
-//         <ListsDisplay/>
-//         <TodoList />
-//       </Layout>
-//     </div>
-//   );
-// }
-
 const testUser = {
-  username: "loko",
-  email: "mailpaziem@gmail.com",
-  password: "lokoestamuyloco",
+  "username": "loko",
+  "email": "mailpaziem@gmail.com",
+  "password": "lokoestamuyloco",
 }
 const testUser2 = {
   username: "loko2",
@@ -46,7 +31,7 @@ const testUser2 = {
 const apiUrl = 'https://recruitment.ultimate.systems';
 
 function App() {
-  let testContext = useContext(TodoListsContext);
+
   let [todoLists, setTodoLists] = useState(
     [    {
             name: "Fridge",
@@ -86,62 +71,59 @@ function App() {
 )
 
 
-
-
-  
-  async function registerUser(user, url) {
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(user)
-    }
-
-    try {
-      const response = await fetch(`${url}/auth/local/register`, options);
-      const data = await response.json();
-      console.log(data)
-      return data
-
-    } catch (e) {
-      console.log('catching there')
-      console.error(e)
-    }
+async function registerUser(user) {
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(user)
   }
 
-  async function login(user) {
-    let {username, password} = user;
-    let credentials = {
-      identifier: username,
-      password: password
-    }
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(credentials)
-    }
+  try {
+    const response = await fetch(`${apiUrl}/auth/local/register`, options);
+    const data = await response.json();
+    console.log(data)
+    return data
 
-    try {
-      const response = await fetch(`${apiUrl}/auth/local`, options);
-      const data = await response.json();
-      console.log(data)
-      return data
+  } catch (e) {
+    console.log('catching there')
+    console.error(e)
+  }
+}
 
-    } catch (e) {
-      console.log('catching there')
-      console.error(e)
-    }
+async function login(user) {
+  let {username, password} = user;
+  let credentials = {
+    identifier: username,
+    password: password
+  }
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(credentials)
   }
 
-  async function getTodoLists(user) {
-    try {
-      const response = await fetch(`${apiUrl}/to-do-lists`);
-      const data = await response.json();
-      console.log(data)
-      return data
+  try {
+    const response = await fetch(`${apiUrl}/auth/local`, options);
+    const data = await response.json();
+    console.log(data)
+    return data
 
-    } catch (e) {
-      console.log('catching there')
-      console.error(e)
-    }
+  } catch (e) {
+    console.log('catching there')
+    console.error(e)
   }
+}
+
+async function getTodoLists(user) {
+  try {
+    const response = await fetch(`${apiUrl}/to-do-lists`);
+    const data = await response.json();
+    console.log(data)
+    return data
+
+  } catch (e) {
+    console.log('catching there')
+    console.error(e)
+  }
+}
 
 useEffect(() => {
   // registerUser(testUser);
@@ -154,35 +136,24 @@ useEffect(() => {
   return (
     <div>
       <Router>
-        {/* <TodoListsContext.Provider value={'nieeee mati, nieee'}> */}
-
-
           <Layout>
             <Switch>
-              {/* <Route exact path="/">
-                <h1>
-                  Welcome Home, Sir!
-                </h1>
-              </Route> */}
               <Route exact path="/">
                 <Login />
               </Route>
               <Route path="/register">
-                <Register />
+                <Register  />
               </Route>
               <TodoListsContext.Provider value={{todoLists, setTodoLists}}>
                 <Route path="/lists">
                     <ListsDisplay/>
                 </Route>
-                <Route path="/alist">
-                    <TodoList />
+                  <Route path="/alist/:id">
+                    <TodoList/>
                 </Route>
               </TodoListsContext.Provider>
             </Switch>
           </Layout>
-
-
-        {/* </TodoListsContext.Provider> */}
       </Router>
     </div>
   );
