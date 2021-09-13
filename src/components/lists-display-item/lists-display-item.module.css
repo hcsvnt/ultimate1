@@ -35,7 +35,9 @@
 .stats {
     /* grid-row: 2;
     grid-column: span 3; */
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    gap: 0.5em
+    /* justify-content: space-between; */
 
 }

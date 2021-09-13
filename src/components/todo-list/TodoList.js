@@ -14,11 +14,11 @@ export default function TodoList() {
     const history = useHistory();
     const {id} = useParams();
     
-    let todoListsContext = useContext(TodoListsContext)
-    let {todoLists, setTodoLists} = todoListsContext;
+    let {todoLists, setTodoLists} = useContext(TodoListsContext);
+    let currentList = todoLists.filter(list => list.id === id)[0]
 
-    let [name, setName] = useState(todoLists[id].name);
-    let [task, setTask] = useState(todoLists[id].task);
+    let [name, setName] = useState(currentList.name);   
+    let [task, setTask] = useState(currentList.task);
     // here im just setting the values from context initially, but whatever changes inside this
     // component is only local to this component, i need to update the context state via the add func
 
@@ -27,16 +27,21 @@ export default function TodoList() {
     function handleName(event) {
         setName(event.target.value)
         console.log(event.target.value)
-    }
+    };
 
-    function updateList() {
-        let updatedList = { name, task };
-        let updatedLists = [...todoLists];
-        updatedLists.splice(id, 1, updatedList);
+    function saveList() {
+        let updatedList = { id, name, task };
+        let updatedLists = [...todoLists.filter(list => list.id !== id), updatedList];
         setTodoLists(updatedLists);
 
         history.push('/lists')
+    };
+
+    function handleTask(index) {
+        // callback function pass to child as prop and set state to child state or smth
+
     }
+
  
     return (
         <div className={styles.container}>
@@ -50,7 +55,7 @@ export default function TodoList() {
                 {task.map((item, index) => {
                     let {name, isDone} = item
                     return (
-                        <TodoItem itemName={name} itemIsDone={isDone} key={index} />
+                        <TodoItem key={index} itemName={name} itemIsDone={isDone} onChange={handleTask(index)} />
                     )
                     })}
                 <TodoItem/>
@@ -69,7 +74,7 @@ export default function TodoList() {
                 <Button
                     name="SAVE" 
                     className="button--big"
-                    onClick={updateList}
+                    onClick={saveList}
                 />
             </div>
         </div>

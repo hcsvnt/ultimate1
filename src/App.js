@@ -34,6 +34,7 @@ function App() {
 
   let [todoLists, setTodoLists] = useState(
     [    {
+            id: "id-1",
             name: "Fridge",
             task: [
                 {
@@ -51,6 +52,7 @@ function App() {
             ]
         },
         {
+          id: "id-2",
             name: "Work",
             task: [
                 {
@@ -130,6 +132,8 @@ useEffect(() => {
   // login(testUser);
   // getTodoLists(testUser)
   console.log(todoLists);
+
+  console.log(todoLists.filter(list => list.id === 'id-1'))
 
 },[todoLists])
 

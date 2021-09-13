@@ -14,16 +14,20 @@ export default function ListsDisplay() {
 
     let { todoLists, setTodoLists } = useContext(TodoListsContext);
 
+    let thisList = todoLists.filter(list => list.id === 'id-1')
+    console.log('this sample list: ', thisList)
+
         // add params - "takes list"
     function addList() {
         let newTodoList = {
-            name: 'test',
+            id: `id-${todoLists.length + 1}`,
+            name: '',
             task: []
         };
         let newTodoLists = [...todoLists, newTodoList];
         setTodoLists(newTodoLists);
         
-        history.push(`/alist/${newTodoLists.length - 1}`)
+        history.push(`/alist/${newTodoList.id}`)
     };
 
     return (
@@ -47,16 +51,16 @@ export default function ListsDisplay() {
                 </select>
             </div>
  
-            {todoLists.map((list, index) => {
-                let {name, task} = list
+            {todoLists.map(list => {
+                let {id, name, task} = list
                 return (
                     <ListsDisplayItem
-                        key={index}
-                        index={index}
+                        key={id}
+                        id={id}
                         name={name} 
                         task={task} 
                         createdAt="11-11-1911"
-                        stats="Completed: 0 Uncompleted: 0 All: 0"
+                        // stats="Completed: 0 Uncompleted: 0 All: 0"
                     />
                 )
             })}
