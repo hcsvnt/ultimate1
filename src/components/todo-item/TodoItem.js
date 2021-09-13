@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, forwardRef} from 'react';
 
 import styles from './todo-item.module.css';
 
-export default function TodoItem({itemName, itemIsDone}) {
+// function TodoItem({itemName, itemIsDone}) {
+function TodoItem(props, ref) {
+    let {itemName, itemIsDone} = props;
     let [name, setName] = useState(itemName);
     let [isDone, setIsDone] = useState(itemIsDone);
 
@@ -17,9 +19,15 @@ export default function TodoItem({itemName, itemIsDone}) {
         console.log(isDone)
     }
 
+    // function clearItem() {
+    //     setName('');
+    //     setIsDone(false)
+    // }
+
     return (
         <div className={styles.container}>
             <input 
+            ref={ref}
                 type="checkbox" 
                 name="isDone" 
                 id="name" 
@@ -40,3 +48,5 @@ export default function TodoItem({itemName, itemIsDone}) {
         </div>
     )
 }
+
+export default forwardRef(TodoItem);
