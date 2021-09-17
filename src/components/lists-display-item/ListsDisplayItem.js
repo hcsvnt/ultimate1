@@ -36,7 +36,6 @@ export default function ListsDisplayItem({id, name, task, createdAt, stats}) {
                     All: {task.length}
                 </span>
             </p>
-            {/* replace this wtih separate spans to do flex space-between */}
         </div>
     )
 }

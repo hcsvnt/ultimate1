@@ -7,7 +7,7 @@ export default function Button({name, className, onClick}) {
         <button 
             className={`${styles.button} ${styles[className]}`}
             onClick={onClick}
-            >
+        >
             {name}
         </button>
     )

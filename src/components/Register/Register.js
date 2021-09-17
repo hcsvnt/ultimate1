@@ -21,11 +21,7 @@ export default function Login() {
             <TextInput placeholder="Email"/>
             <TextInput placeholder="Password"/>
             <TextInput placeholder="Repeat password"/>
-            <Button 
-                name="Create" 
-                className="button--big"
-                // onClick={handleName}
-                />
+            <Button name="Create" className="button--big"/>
         </div>
     )
 }

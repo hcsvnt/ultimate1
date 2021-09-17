@@ -24,7 +24,6 @@ export default function Login() {
             <p>
                 or
             </p>
-            {/* <a>create an account</a> */}
             <Link to="/register">create an account</Link>
         </div>
     )

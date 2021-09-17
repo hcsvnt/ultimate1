@@ -14,10 +14,6 @@ export default function ListsDisplay() {
 
     let { todoLists, setTodoLists } = useContext(TodoListsContext);
 
-    let thisList = todoLists.filter(list => list.id === 'id-1')
-    console.log('this sample list: ', thisList)
-
-        // add params - "takes list"
     function addList() {
         let newTodoList = {
             id: `id-${todoLists.length + 1}`,
@@ -60,7 +56,6 @@ export default function ListsDisplay() {
                         name={name} 
                         task={task} 
                         createdAt="11-11-1911"
-                        // stats="Completed: 0 Uncompleted: 0 All: 0"
                     />
                 )
             })}

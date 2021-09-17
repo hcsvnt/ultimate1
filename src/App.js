@@ -86,7 +86,6 @@ async function registerUser(user) {
     return data
 
   } catch (e) {
-    console.log('catching there')
     console.error(e)
   }
 }
@@ -109,12 +108,11 @@ async function login(user) {
     return data
 
   } catch (e) {
-    console.log('catching there')
     console.error(e)
   }
 }
 
-async function getTodoLists(user) {
+async function getTodoLists() {
   try {
     const response = await fetch(`${apiUrl}/to-do-lists`);
     const data = await response.json();
@@ -122,7 +120,6 @@ async function getTodoLists(user) {
     return data
 
   } catch (e) {
-    console.log('catching there')
     console.error(e)
   }
 }
@@ -131,11 +128,9 @@ useEffect(() => {
   // registerUser(testUser);
   // login(testUser);
   // getTodoLists(testUser)
-  console.log(todoLists);
 
-  console.log(todoLists.filter(list => list.id === 'id-1'))
 
-},[todoLists])
+},[])
 
   return (
     <div>

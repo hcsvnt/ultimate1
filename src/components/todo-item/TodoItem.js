@@ -1,33 +1,31 @@
-import React, { useState, forwardRef} from 'react';
+import React, { useState } from 'react';
+import { isDOMComponent } from 'react-dom/test-utils';
 
 import styles from './todo-item.module.css';
 
-// function TodoItem({itemName, itemIsDone}) {
-function TodoItem(props, ref) {
-    let {itemName, itemIsDone} = props;
+function TodoItem({itemName, itemIsDone, isNew, handleNewItemName, handleNewItemIsDone}) {
     let [name, setName] = useState(itemName);
     let [isDone, setIsDone] = useState(itemIsDone);
 
     function handleName(event) {
         setName(event.target.value)
-        console.log(name)
+        if(isNew) {
+            handleNewItemName(name);
+        }
     }
     // how to make this more reusable
     
     function handleIsDone() {
         setIsDone(!isDone)
-        console.log(isDone)
+        if(isNew) {
+            handleNewItemIsDone(isDone);
+            
+        }
     }
-
-    // function clearItem() {
-    //     setName('');
-    //     setIsDone(false)
-    // }
 
     return (
         <div className={styles.container}>
             <input 
-            ref={ref}
                 type="checkbox" 
                 name="isDone" 
                 id="name" 
@@ -35,18 +33,18 @@ function TodoItem(props, ref) {
                 onChange={handleIsDone} 
                 title="Task completed" 
                 aria-label="Task completed"
-                />
+            />
             <input 
-            type="text" 
-            name="name" 
-            id="name" 
-            value={name}
-            onChange={handleName} 
-            aria-label="Task name" 
-            placeholder="Task name"
+                type="text" 
+                name="name" 
+                id="name" 
+                value={name}
+                onChange={handleName} 
+                aria-label="Task name" 
+                placeholder="Task name"
             />
         </div>
     )
 }
 
-export default forwardRef(TodoItem);
+export default TodoItem;

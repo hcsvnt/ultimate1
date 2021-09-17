@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, useParams, useHistory } from 'react-router-dom';
 
 import styles from './todo-list.module.css';
@@ -22,12 +22,19 @@ export default function TodoList() {
 
     let [newItemKey, setNewItemKey] = useState(0);
 
-    const ref = useRef(null);
 
-    // here im just setting the values from context initially, but whatever changes inside this
-    // component is only local to this component, i need to update the context state via the add func
 
-    // TODO pass setTask etc down to todoitem
+    let [newItemName, setNewItemName] = useState(null);
+    let [newItemIsDone, setNewItemIsDone] = useState(null);
+
+    function handleNewItemName(name) {
+        setNewItemName(name);
+    }
+    function handleNewItemIsDone(isDone) {
+        setNewItemIsDone(isDone);
+    }
+
+
 
     function handleName(event) {
         setName(event.target.value)
@@ -53,12 +60,13 @@ export default function TodoList() {
     }
 
     function addTask() {
-        // console.log('adding task', newItem.current)
-        
+        let newItem = {newItemName, newItemIsDone}
+        let newTask = [...task, newItem];
+        setTask(newTask)  
+        setNewItemKey(newItemKey += 1);
     }
 
     useEffect(() => {
-        console.log(ref.current)
     }, [])
 
  
@@ -77,7 +85,7 @@ export default function TodoList() {
                         <TodoItem key={index} itemName={name} itemIsDone={isDone} onChange={handleTask(index)} />
                     )
                     })}
-                <TodoItem key={newItemKey} ref={ref} />
+                <TodoItem key={newItemKey} isNew={true} handleNewItemName={handleNewItemName} handleNewItemIsDone={handleNewItemIsDone} />
                 {/* this should probably be just an input */}
             </div>
             <div className={styles.todoButtons}>
